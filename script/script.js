@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const close = document.querySelector('.close');
   var tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'expo.inOut' } });
 
+  // Set initial state for nav
+  gsap.set('nav', { right: '-100%', height: '100vh' });
+
   open.addEventListener('click', () => {
     if (tl.reversed()) {
       tl.play();

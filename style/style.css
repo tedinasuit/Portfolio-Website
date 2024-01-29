@@ -16,11 +16,11 @@ body {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 5vw;
   text-align: center;
 }
 
-.container{
+.container {
   cursor: pointer;
   position: absolute;
   top: 5%;
@@ -29,14 +29,24 @@ h1 {
   height: 20px;
 }
 
-.bars{
+/* Media query for screens with portrait orientation */
+@media only screen and (orientation: portrait) {
+  .container {
+    top: auto;
+    bottom: 5%;
+    right: 50%;
+    transform: translateX(50%); /* Center the button horizontally */
+  }
+}
+
+.bars {
   width: 30px;
   height: 4px;
   background: #000;
 }
 
 .bars::before,
-.bars::after{
+.bars::after {
   content: '';
   position: absolute;
   width: 30px;
@@ -44,11 +54,11 @@ h1 {
   background: #000;
 }
 
-.bars::before{
+.bars::before {
   margin-top: 9px;
 }
 
-.bars::after{
+.bars::after {
   margin-top: 18px;
 }
 
@@ -65,6 +75,20 @@ nav {
   top: 0;
   z-index: 1; /* Ensure the navigation bar appears above other content */
   overflow: hidden; /* Hide content outside the 30% width */
+}
+
+@media only screen and (orientation: portrait) {
+  nav {
+    width: 100%;
+    right: 0;
+  }
+
+    .container {
+    top: auto;
+    bottom: 5%;
+    right: 50%;
+    transform: translateX(50%); /* Center the button horizontally */
+  }
 }
 
 nav ul {
