@@ -16,33 +16,25 @@ body {
 }
 
 h1 {
-  font-size: 5vw;
+  font-size: 80px;
   text-align: center;
 }
 
 .container {
   cursor: pointer;
   position: absolute;
-  top: 5%;
-  right: 5%;
+  bottom: 5%; /* Adjusted to bottom position */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
   width: 30px;
   height: 20px;
-}
-
-/* Media query for screens with portrait orientation */
-@media only screen and (orientation: portrait) {
-  .container {
-    top: auto;
-    bottom: 5%;
-    right: 50%;
-    transform: translateX(50%); /* Center the button horizontally */
-  }
 }
 
 .bars {
   width: 30px;
   height: 4px;
   background: #000;
+  position: relative;
 }
 
 .bars::before,
@@ -64,40 +56,21 @@ h1 {
 
 nav {
   position: absolute;
-  width: 50%; /* Set the default width to approximately 30% */
-  height: 100%;
+  width: 40%;
+  height: 30px;
   background: #000;
   display: flex;
-  flex-direction: column; /* Adjusted for vertical stacking of items */
   justify-content: center;
   align-items: center;
-  right: -50%; /* Adjusted for the default width of the nav */
-  top: 0;
-  z-index: 1; /* Ensure the navigation bar appears above other content */
-  overflow: hidden; /* Hide content outside the 30% width */
-}
-
-@media only screen and (orientation: portrait) {
-  nav {
-    width: 100%;
-    right: 0;
-  }
-
-    .container {
-    top: auto;
-    bottom: 5%;
-    right: 50%;
-    transform: translateX(50%); /* Center the button horizontally */
-  }
+  right: -200vw;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
 }
 
 nav ul li {
-  margin: 20px 0; /* Adjusted for better spacing */
+  margin: 50px 0;
 }
 
 nav ul li a {
@@ -120,7 +93,7 @@ nav ul li a:after {
   bottom: -10px;
   left: 0;
   transform-origin: left;
-  transition: transform 0.5s ease;
+  transition: transform .5s ease;
   transform: scaleX(0);
 }
 
@@ -156,7 +129,7 @@ nav .close div::after {
   width: 30px;
   height: 4px;
   background: #fff;
-  transition: background 0.5s ease;
+  transition: background .5s ease;
 }
 
 nav .close div::before {
@@ -170,4 +143,37 @@ nav .close div::after {
 nav .close:hover div::before,
 nav .close:hover div::after {
   background: rgb(209, 3, 3);
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  nav {
+    width: 100%;
+    right: 0;
+  }
+
+  .container {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (orientation: landscape) {
+  nav {
+    width: 40%; /* Adjusted width for landscape */
+    right: -200vw;
+  }
+
+  .container {
+    bottom: auto; /* Reset bottom position */
+    top: 5%; /* Adjusted top position for landscape */
+    left: auto; /* Reset left position */
+    right: 5%; /* Adjusted right position for landscape */
+    transform: none; /* Reset transform for landscape */
+  }
 }

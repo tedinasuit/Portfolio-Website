@@ -1,19 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
   const open = document.querySelector('.container');
   const close = document.querySelector('.close');
-  var tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'expo.inOut' } });
+  var tl = gsap.timeline({ defaults: { duration: 0.4, ease: 'expo.inOut' } });
 
   // Set initial state for nav
-  gsap.set('nav', { right: '-100%', height: '100vh' });
+  gsap.set('nav', { right: '-100%', bottom: '-100%', height: '100vh' });
 
   open.addEventListener('click', () => {
     if (tl.reversed()) {
       tl.play();
     } else {
-      tl.to('nav', { right: 0 })
+      const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+
+      tl.to('nav', {
+        right: isPortrait ? 'auto' : 0,
+        bottom: isPortrait ? 0 : 'auto',
+      })
         .to('nav', { height: '100vh' }, '-=.1')
-        .to('nav ul li a', { opacity: 1, pointerEvents: 'all', stagger: .2 }, '-=.8')
-        .to('.close', { opacity: 1, pointerEvents: 'all' }, "-=.8")
+        .to('nav ul li a', { opacity: 1, pointerEvents: 'all', stagger: .1 }, '-=1')
+        .to('.close', { opacity: 1, pointerEvents: 'all' }, "-=1")
         .to('nav h2', { opacity: 1 }, '-=1');
     }
   });
