@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@800&family=Jost:wght@800&display=swap" rel="stylesheet">
     <title>LARS</title>
     <style>
         body {
-            background-color: #333;
+            background-color: #212020;
             font-family: Arial, sans-serif;
             color: #eee;
             margin: 0;
@@ -22,8 +22,8 @@
             padding: 20px;
         }
         h1 {
-            font-size: 60px;
-            margin-left: 5%;
+            font-size: 80px;
+            margin-left: 8%;
         }
         nav {
             display: flex;
@@ -37,58 +37,121 @@
         .projects {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* 3 columns */
-            gap: 5px;
-            padding-left: 5%;
-            padding-right: 5%;
+            gap: 0px;
+            padding-left: 8%;
+            padding-right: 8%;
+        }
 
-        }
         .section {
-            background-color: #444;
-            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 80px;
+            height: 200px;
         }
+
         .section h2 {
-            font-size: 18px;
+            font-size: 40px;
+            color: #000000;
+            font-family: "Inconsolata", monospace;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
             margin: 0;
         }
+
+        .jost-LARS {
+            font-family: "Jost", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+            /* Styles for project: amut */
+        #project-amut {
+            background-color: #D9D9D9;
+        }
+
+        /* Styles for project: s-cool */
+        #project-s-cool {
+            background-color: #FFB4B4;
+        }
+
+        /* Styles for project: asl-vr */
+        #project-asl-vr {
+            background-color: #9C9494;
+        }
+
+        /* Styles for project: valjongens-game */
+        #project-valjongens-game {
+            background-color: #9C9494;
+        }
+
+        /* Styles for project: football-windmill */
+        #project-football-windmill {
+            background-color: #FFB4B4;
+        }
+
+        /* Styles for project: portfolio-website */
+        #project-portfolio-website {
+            background-color: #9C9494;
+        }
+
+        /* Styles for project: unreal-portfolio */
+        #project-unreal-portfolio {
+            background-color: #D9D9D9;
+        }
+
+        /* Styles for project: nore-ar-app */
+        #project-nore-ar-app {
+            background-color: #D9D9D9;
+        }
+
+        /* Styles for project: ambisense */
+        #project-ambisense {
+            background-color: #FFB4B4;
+        }
+
+
     </style>
 </head>
 <body>
     <header>
-        <h1>LARS</h1>
-        <nav>
+        <h1 class="jost-LARS">LARS</h1>
+        <nav style="
+        margin-right: 8%;"">
             <a href="#" class="nav-link">About Me</a>
             <a href="#" class="nav-link">My Work</a>
         </nav>
     </header>
     <div class="projects">
-        <div class="section large">
+        <div class="section large" id="project-amut">
             <h2>amut</h2>
         </div>
-        <div class="section">
+        <div class="section" id="project-s-cool">
             <h2>s-cool</h2>
         </div>
-        <div class="section huge">
+        <div class="section huge" id="project-asl-vr">
             <h2>asl-vr</h2>
         </div>
-        <div class="section">
+        <div class="section" id="project-valjongens-game">
             <h2>valjongens game</h2>
         </div>
-        <div class="section">
-            <h2>the football windmill</h2>
-        </div>
-        <div class="section">
-            <h2>portfolio website</h2>
-        </div>
-        <div class="section">
-            <h2>unreal portfolio</h2>
-        </div>
-        <div class="section">
+        <div class="section" id="project-nore-ar-app">
             <h2>nore ar app</h2>
         </div>
-        <div class="section">
+        <div class="section" id="project-ambisense">
             <h2>ambisense</h2>
+        </div>
+        <div class="section" id="project-football-windmill">
+            <h2>the football windmill</h2>
+        </div>
+        <div class="section" id="project-portfolio-website">
+            <h2>portfolio website</h2>
+        </div>
+        <div class="section" id="project-unreal-portfolio">
+            <h2>unreal portfolio</h2>
         </div>
     </div>
 </body>
